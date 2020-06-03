@@ -1,0 +1,7 @@
+attributes:
+  language-id: 'English(US)'
+  as-default-language: true
+
+messages:
+  system-loaded-language:
+    - '&bSuccessfully loaded &3%system_language_amount% &blanguage(s)'
