@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'kr.entree.spigradle' version '1.2.4'
+}
+
+group 'com.github.tivecs.tivecore'
+version '1.1.2'
+
+jar{
+    destinationDirectory = file('../../Minecraft Server/plugins')
+}
+
+repositories {
+    mavenCentral()
+
+    spigot()
+    maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url = 'https://oss.sonatype.org/content/repositories/central' }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compileOnly spigot('1.13.2')
+
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
+}
+
+spigot{
+    name = 'TiveCore'
+    version = project.version
+    main = 'com.github.tivecs.tivecore.TiveCorePlugin'
+    apiVersion = '1.13'
+    authors = ['TiveCS']
+    description = 'Core for TiveCS plugin'
+
+    commands{
+        tivecore{
+            permission = 'tivecore.command'
+            aliases = ['tcore']
+        }
+    }
+}

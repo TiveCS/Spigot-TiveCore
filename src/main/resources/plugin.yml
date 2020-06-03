@@ -1,0 +1,8 @@
+name: ${project.name}
+main: com.github.TiveCS.tivecore.TiveCorePlugin
+version: ${project.version}
+description: ${project.description}
+api-version: 1.13
+commands:
+  tivecore:
+    permission: tivecore.command
